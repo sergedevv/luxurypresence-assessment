@@ -31,23 +31,23 @@ export const Navbar: React.FC = () => {
           <nav aria-label="Main Navigation">
             <ul className="navbar-nav">
               <li>
-                <a href="#about" className="nav-link">Meet Marci Metzger</a>
+                <a href="#home" className="nav-link">Home</a>
               </li>
               <li>
-                <a href="#services" className="nav-link">Services</a>
+                <a href="#search-listings" className="nav-link">Listings</a>
               </li>
               <li>
-                <a href="#gallery" className="nav-link">Gallery</a>
+                <a href="#contact" className="nav-link">Let&apos;s Move</a>
               </li>
               <li>
-                <a href="#contact" className="nav-link">Contact</a>
+                <a href="#about" className="nav-link">About us</a>
               </li>
             </ul>
           </nav>
 
           <div className="navbar-actions">
             <a href="tel:7025958260" className="btn-header-call">
-              Call (702) 595-8260
+              Call Now
             </a>
 
             <button 
@@ -67,20 +67,20 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Drawer */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        <a href="#about" className="mobile-nav-link" onClick={closeMenu}>
-          Meet Marci Metzger
+        <a href="#home" className="mobile-nav-link" onClick={closeMenu}>
+          Home
         </a>
-        <a href="#services" className="mobile-nav-link" onClick={closeMenu}>
-          Services
-        </a>
-        <a href="#gallery" className="mobile-nav-link" onClick={closeMenu}>
-          Gallery
+        <a href="#search-listings" className="mobile-nav-link" onClick={closeMenu}>
+          Listings
         </a>
         <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>
-          Contact
+          Let&apos;s Move
         </a>
-        <a href="tel:7025958260" className="mobile-call-btn" onClick={closeMenu}>
-          Call (702) 595-8260
+        <a href="#about" className="mobile-nav-link" onClick={closeMenu}>
+          About us
+        </a>
+        <a href="tel:2069196886" className="mobile-call-btn" onClick={closeMenu}>
+          Call Now
         </a>
       </div>
     </header>

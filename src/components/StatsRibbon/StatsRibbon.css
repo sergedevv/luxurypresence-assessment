@@ -46,6 +46,12 @@
   letter-spacing: 0.02em;
 }
 
+.stat-rank-number {
+  font-family: var(--font-sans);
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  font-weight: 450;
+}
+
 .stat-label {
   font-family: var(--font-sans);
   font-size: 0.72rem;
@@ -58,26 +64,41 @@
 
 @media (max-width: 860px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .stat-item {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-ribbon {
+    padding: 24px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 10px;
+  }
+
+  .stat-item {
+    padding: 0 6px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+    margin-bottom: 3px;
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
   }
 
   .stat-item:nth-child(2)::after {
     display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-ribbon {
-    padding: 30px 0;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .stat-item::after {
-    display: none !important;
   }
 }

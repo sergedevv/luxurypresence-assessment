@@ -43,7 +43,6 @@ export const ContactLocation: React.FC = () => {
                   id="form-name"
                   type="text"
                   required
-                  placeholder="John Doe"
                   className="form-input"
                   value={formData.fullName}
                   onChange={(e) =>
@@ -58,7 +57,6 @@ export const ContactLocation: React.FC = () => {
                   id="form-email"
                   type="email"
                   required
-                  placeholder="john@example.com"
                   className="form-input"
                   value={formData.email}
                   onChange={(e) =>
@@ -71,7 +69,6 @@ export const ContactLocation: React.FC = () => {
                 <label htmlFor="form-message" className="form-label">How Can We Help?</label>
                 <textarea
                   id="form-message"
-                  placeholder="How can we help you?"
                   className="form-textarea"
                   value={formData.message}
                   onChange={(e) =>
@@ -92,7 +89,7 @@ export const ContactLocation: React.FC = () => {
             </form>
 
             <div className="contact-direct-info">
-              <a href="tel:7025958260" className="direct-info-item">
+              <a href="tel:2069196886" className="direct-info-item">
                 <svg
                   width="18"
                   height="18"
@@ -105,7 +102,7 @@ export const ContactLocation: React.FC = () => {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                <span>(702) 595-8260</span>
+                <span>(206) 919-6886</span>
               </a>
 
               <div className="direct-info-item">

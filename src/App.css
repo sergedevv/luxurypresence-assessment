@@ -10,3 +10,43 @@
   flex: 1 0 auto;
   width: 100%;
 }
+
+.main-content > section {
+  position: relative;
+}
+
+.main-content > section.scroll-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-content > section.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Deliberate surface changes keep adjacent sections from melting together. */
+.main-content > #about,
+.main-content > #gallery {
+  background: var(--color-bg);
+}
+
+.main-content > .get-it-sold-section,
+.main-content > #services {
+  background: var(--color-bg-alt);
+}
+
+.main-content > #search-listings,
+.main-content > .partner-logos-section,
+.main-content > .contact-location-section {
+  background: var(--color-surface-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-content > section.scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

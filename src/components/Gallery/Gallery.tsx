@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { IMAGES, type GalleryItem } from '../../constants/images';
 import './Gallery.css';
 
-type FilterCategory = 'all' | 'estates' | 'ranches' | 'interiors';
-
 export const Gallery: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<FilterCategory>('all');
+  const [featuredIndex, setFeaturedIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filteredItems = IMAGES.galleryItems.filter((item) => {
-    if (activeCategory === 'all') return true;
-    return item.category === activeCategory;
-  });
+  const filteredItems = IMAGES.galleryItems;
+
+  const featuredItem = filteredItems[featuredIndex] ?? filteredItems[0];
 
   const openLightbox = (item: GalleryItem) => {
     const idx = filteredItems.findIndex((i) => i.id === item.id);
@@ -78,73 +75,44 @@ export const Gallery: React.FC = () => {
     <section id="gallery" className="gallery-section" aria-label="Photo Gallery">
       <div className="container">
         <div className="gallery-header">
-          <span className="gallery-eyebrow">Exclusive Portfolio</span>
-          <h2 className="gallery-title">Featured Property Gallery</h2>
-          <p className="gallery-subtitle">
-            Explore an exclusive collection of luxury desert estates, custom
-            ranches, and architectural interiors represented by Marci Metzger.
-          </p>
+          <span className="gallery-eyebrow">A visual collection</span>
+          <h2 className="gallery-title">The Gallery</h2>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="gallery-filters" role="tablist" aria-label="Gallery Categories">
-          <button
-            type="button"
-            className={`gallery-filter-btn ${activeCategory === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('all')}
-          >
-            All Properties
-          </button>
-          <button
-            type="button"
-            className={`gallery-filter-btn ${activeCategory === 'estates' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('estates')}
-          >
-            Luxury Estates
-          </button>
-          <button
-            type="button"
-            className={`gallery-filter-btn ${activeCategory === 'ranches' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('ranches')}
-          >
-            Desert Ranches
-          </button>
-          <button
-            type="button"
-            className={`gallery-filter-btn ${activeCategory === 'interiors' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('interiors')}
-          >
-            Interiors
-          </button>
-        </div>
-
-        {/* Photo Grid */}
-        <div className="gallery-grid">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="gallery-card"
-              onClick={() => openLightbox(item)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') openLightbox(item);
-              }}
-              aria-label={`View ${item.title}`}
+        <div className="gallery-viewer">
+          {featuredItem && (
+            <button
+              type="button"
+              className="gallery-featured"
+              onClick={() => openLightbox(featuredItem)}
+              aria-label={`Open ${featuredItem.title}`}
             >
               <img
-                src={item.image}
-                alt={item.title}
-                className="gallery-card-img"
-                loading="lazy"
+                src={featuredItem.image}
+                alt={featuredItem.title}
+                className="gallery-featured-img"
               />
-              <div className="gallery-card-overlay">
-                <h3 className="gallery-card-title">{item.title}</h3>
-                <p className="gallery-card-location">{item.location}</p>
-                <span className="gallery-card-action">View photograph</span>
-              </div>
-            </div>
-          ))}
+              <span className="gallery-featured-count">
+                {String(featuredIndex + 1).padStart(2, '0')} / {String(filteredItems.length).padStart(2, '0')}
+              </span>
+            </button>
+          )}
+
+          <div className="gallery-thumbnails" role="tablist" aria-label="Gallery photographs">
+            {filteredItems.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                role="tab"
+                aria-selected={index === featuredIndex}
+                aria-label={`Show ${item.title}`}
+                className={`gallery-thumbnail ${index === featuredIndex ? 'active' : ''}`}
+                onClick={() => setFeaturedIndex(index)}
+              >
+                <img src={item.image} alt="" loading="lazy" />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

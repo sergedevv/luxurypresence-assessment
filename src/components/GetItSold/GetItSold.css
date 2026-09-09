@@ -1,0 +1,42 @@
+.get-it-sold-section { position: relative; overflow: hidden; padding: 132px 0 148px; background: #f5f1e8; border-top: 1px solid rgba(197, 160, 89, 0.32); border-bottom: 1px solid rgba(197, 160, 89, 0.32); }
+.get-it-sold-section::before { position: absolute; top: 28px; left: 50%; width: min(78%, 980px); height: 1px; background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.7), transparent); content: ''; transform: translateX(-50%); }
+.get-it-sold-section::after { position: absolute; right: -12vw; bottom: 8%; width: 34vw; height: 34vw; border: 1px solid rgba(197, 160, 89, 0.18); content: ''; transform: rotate(45deg); pointer-events: none; }
+.get-it-sold-header { position: relative; z-index: 1; max-width: 650px; margin: 0 auto 82px; text-align: center; }
+.get-it-sold-eyebrow { display: block; margin-bottom: 14px; color: var(--color-gold); font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.get-it-sold-header h2 { color: #1a1816; font-family: var(--font-serif); font-size: clamp(3.4rem, 7vw, 6.4rem); font-weight: 500; letter-spacing: .03em; line-height: .86; text-transform: uppercase; }
+.get-it-sold-header p { max-width: 430px; margin: 22px auto 0; color: #6a655e; font-size: .92rem; line-height: 1.65; }
+.get-it-sold-list { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 104px; }
+.sold-story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .92fr); align-items: center; gap: clamp(52px, 9vw, 142px); }
+.sold-story:not(:last-child) { padding-bottom: 104px; border-bottom: 1px solid rgba(112, 95, 65, 0.18); }
+.sold-story-reverse { grid-template-columns: minmax(300px, .92fr) minmax(0, 1fr); }
+.sold-story-reverse .sold-story-image-wrap { order: 2; }
+.sold-story-reverse .sold-story-copy { order: 1; }
+.sold-story-image-wrap { position: relative; aspect-ratio: 1.52 / 1; overflow: hidden; background: #e7e0d4; }
+.sold-story-image-wrap::after { position: absolute; right: -10px; bottom: -10px; width: 78px; height: 78px; border-right: 1px solid var(--color-gold); border-bottom: 1px solid var(--color-gold); content: ''; }
+.sold-story-image { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+.sold-story:hover .sold-story-image { transform: scale(1.045); }
+.sold-story-copy { max-width: 410px; }
+.sold-story-number { display: block; margin-bottom: 16px; color: var(--color-gold); font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; }
+.sold-story-audience { display: block; margin-bottom: 10px; color: #dfb76c; font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.sold-story-copy h3 { margin-bottom: 18px; color: #1a1816; font-family: var(--font-serif); font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 500; line-height: 1.05; }
+.sold-story-copy p { margin-bottom: 24px; color: #6a655e; font-size: .9rem; line-height: 1.75; }
+.sold-story-link { display: inline-flex; align-items: center; gap: 8px; color: #1a1816; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.sold-story-link:hover { color: var(--color-gold-hover); }
+.sold-story-link svg { transition: transform .25s ease; }
+.sold-story-link:hover svg { transform: translate(3px, -3px); }
+
+.sold-story { opacity: 0; transform: translateY(16px); }
+.get-it-sold-section.is-visible .sold-story { animation: storyReveal .7s both ease-out; }
+.get-it-sold-section.is-visible .sold-story:nth-child(2) { animation-delay: .12s; }
+.get-it-sold-section.is-visible .sold-story:nth-child(3) { animation-delay: .24s; }
+
+@keyframes storyReveal {
+	from { opacity: 0; transform: translateY(16px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sold-story,
+	.get-it-sold-section.is-visible .sold-story { opacity: 1; transform: none; animation: none; }
+}
+@media (max-width: 760px) { .get-it-sold-section { padding: 94px 0 104px; } .get-it-sold-section::after { right: -28vw; bottom: 14%; width: 70vw; height: 70vw; } .get-it-sold-header { margin-bottom: 58px; } .get-it-sold-list { gap: 64px; } .sold-story, .sold-story-reverse { grid-template-columns: 1fr; gap: 26px; } .sold-story:not(:last-child) { padding-bottom: 64px; } .sold-story-reverse .sold-story-image-wrap, .sold-story-reverse .sold-story-copy { order: initial; } .sold-story-image-wrap { aspect-ratio: 1.35 / 1; } }

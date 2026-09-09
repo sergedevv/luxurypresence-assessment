@@ -8,9 +8,9 @@ interface StatMetric {
 
 const STATS_DATA: StatMetric[] = [
   { value: '30+', label: 'Years of Experience' },
-  { value: '$28.5M', label: 'In Volume (2023)' },
+  { value: '$28.5M', label: 'In Volume (2021)' },
   { value: '90+', label: 'Happy Clients' },
-  { value: 'Top 1%', label: 'Pahrump Realtor' },
+  { value: '#1', label: 'Residential Sales Last 5 Years' },
 ];
 
 export const StatsRibbon: React.FC = () => {
@@ -20,7 +20,9 @@ export const StatsRibbon: React.FC = () => {
         <div className="stats-grid">
           {STATS_DATA.map((stat) => (
             <div key={stat.label} className="stat-item">
-              <div className="stat-number">{stat.value}</div>
+              <div className="stat-number">
+                {stat.value === '#1' ? <><span aria-hidden="true">#</span><span className="stat-rank-number">1</span></> : stat.value}
+              </div>
               <div className="stat-label">{stat.label}</div>
             </div>
           ))}

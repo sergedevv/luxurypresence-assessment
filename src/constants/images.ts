@@ -1,3 +1,18 @@
+import heroImage from '../assets/heroimage.jpeg';
+import marciPortrait from '../assets/marcimetzger.jpeg';
+import topResidentialSales from '../assets/topresidentialsales.jpeg';
+import dontJustListIt from '../assets/dontjustlistit.jpeg';
+import guideToBuyers from '../assets/guidetobuyers.jpeg';
+import realtorLogo from '../assets/realtor.jpeg';
+import pahrumpValleyLogo from '../assets/pahrumpvalley.jpeg';
+import galleryImage1 from '../assets/galleryimage1.jpg';
+import galleryImage2 from '../assets/galleryimage2.jpg';
+import galleryImage3 from '../assets/galleryimage3.jpg';
+import galleryImage4 from '../assets/galleryimage4.jpg';
+import galleryImage5 from '../assets/galleryimage5.jpg';
+import galleryImage6 from '../assets/galleryimage6.jpg';
+import galleryImage7 from '../assets/galleryimage7.jpg';
+
 // Curated high-resolution placeholders and assets matching the design mockup
 
 export interface GalleryItem {
@@ -30,10 +45,25 @@ export const IMAGES = {
       url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=85',
       alt: 'Luxury custom ranch home with panoramic mountain views',
     },
+    {
+      url: heroImage,
+      alt: 'Pahrump desert community with mountain views',
+    },
   ],
 
-  // Real estate agent portrait resembling Marci Metzger (blonde, navy blazer, confident smile)
-  marciPortrait: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85',
+  // Real estate agent portrait
+  marciPortrait,
+
+  getItSold: {
+    topResidentialSales,
+    dontJustListIt,
+    guideToBuyers,
+  },
+
+  partnerLogos: {
+    realtor: realtorLogo,
+    pahrumpValley: pahrumpValleyLogo,
+  },
 
   // Services 3 Cards
   serviceSell: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=85',
@@ -48,7 +78,7 @@ export const IMAGES = {
       category: 'estates',
       categoryLabel: 'Luxury Estate',
       location: 'Mountain Falls, Pahrump, NV',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
+      image: galleryImage1,
       price: '$1,450,000',
       details: '4 Beds • 4.5 Baths • 4,820 Sq Ft',
     },
@@ -58,7 +88,7 @@ export const IMAGES = {
       category: 'ranches',
       categoryLabel: 'Desert Ranch',
       location: 'Calvada Valley, Pahrump, NV',
-      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=85',
+      image: galleryImage2,
       price: '$2,100,000',
       details: '5 Beds • 5 Baths • 10.5 Acres',
     },
@@ -68,7 +98,7 @@ export const IMAGES = {
       category: 'interiors',
       categoryLabel: 'Interior Design',
       location: 'Pahrump Valley, NV',
-      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85',
+      image: galleryImage3,
       price: 'Custom Build',
       details: 'Vaulted Ceilings • Custom Fireplace',
     },
@@ -78,7 +108,7 @@ export const IMAGES = {
       category: 'estates',
       categoryLabel: 'Luxury Estate',
       location: 'Desert Haven, Pahrump, NV',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
+      image: galleryImage4,
       price: '$1,890,000',
       details: '4 Beds • 3.5 Baths • Pool & Spa',
     },
@@ -88,7 +118,7 @@ export const IMAGES = {
       category: 'ranches',
       categoryLabel: 'Desert Ranch',
       location: 'Crystal Basin, Pahrump, NV',
-      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85',
+      image: galleryImage5,
       price: '$980,000',
       details: '3 Beds • 2 Baths • 5.0 Acres',
     },
@@ -98,9 +128,19 @@ export const IMAGES = {
       category: 'interiors',
       categoryLabel: 'Interior Design',
       location: 'Mountain Falls Golf Club, NV',
-      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85',
+      image: galleryImage6,
       price: 'Designer Interior',
       details: 'Marble Island • Sub-Zero Appliances',
+    },
+    {
+      id: 'prop-7',
+      title: 'Pahrump Valley Retreat',
+      category: 'estates',
+      categoryLabel: 'Valley Estate',
+      location: 'Pahrump Valley, NV',
+      image: galleryImage7,
+      price: 'Private Listing',
+      details: 'Desert Views • Mountain Setting',
     },
   ] as GalleryItem[],
 };

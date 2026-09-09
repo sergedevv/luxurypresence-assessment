@@ -1,22 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logoBig from '../../assets/marcimetzgerlogobig.png';
 import equalHousingLogo from '../../assets/equalhousingicon.png';
 import './Footer.css';
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleNewsletter = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubscribed(true);
-    setTimeout(() => {
-      setSubscribed(false);
-      setEmail('');
-    }, 4000);
-  };
-
   return (
     <footer className="site-footer" aria-label="Site Footer">
       <div className="container">
@@ -69,6 +56,16 @@ export const Footer: React.FC = () => {
                   <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
                 </svg>
               </a>
+
+              <a
+                href="https://www.yelp.com/search?find_desc=Marci+Metzger+Homes&find_loc=Pahrump%2C+NV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link-btn social-link-yelp"
+                aria-label="Yelp"
+              >
+                <span aria-hidden="true">y</span>
+              </a>
             </div>
           </div>
 
@@ -110,50 +107,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: Newsletter */}
-          <div>
-            <h4 className="footer-col-title">Newsletter</h4>
-            <p className="footer-newsletter-text">
-              Stay updated with the latest Pahrump market trends.
-            </p>
-
-            <form className="footer-newsletter-form" onSubmit={handleNewsletter}>
-              <input
-                type="email"
-                required
-                placeholder="Email Address"
-                aria-label="Email Address for newsletter"
-                className="newsletter-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="newsletter-submit-btn"
-                aria-label="Subscribe to newsletter"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </button>
-            </form>
-
-            {subscribed && (
-              <p className="newsletter-feedback" role="status">
-                Thank you for subscribing!
-              </p>
-            )}
-          </div>
         </div>
 
         {/* Bottom Bar: Copyright & MLS / Equal Housing */}

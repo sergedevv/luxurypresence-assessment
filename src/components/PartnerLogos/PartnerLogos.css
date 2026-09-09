@@ -1,0 +1,86 @@
+.partner-logos-section {
+  padding: 42px 0;
+  background: #ffffff;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.partner-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 34px;
+}
+
+.partner-logo {
+  display: flex;
+  width: 100%;
+  height: 86px;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.82;
+  filter: grayscale(0.15);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.partner-logo img {
+  max-width: 142px;
+  max-height: 76px;
+  object-fit: contain;
+}
+
+.partner-logo-ridge img {
+  width: 96px;
+}
+
+.partner-logo-housing img {
+  width: 82px;
+}
+
+.partner-logo-realtor {
+  flex-direction: column;
+}
+
+.partner-logo-realtor img {
+  width: 94px;
+}
+
+.partner-logo-chamber {
+  flex-direction: column;
+}
+
+.partner-logo-chamber img {
+  width: 112px;
+}
+
+@media (max-width: 600px) {
+  .partner-logos-section {
+    padding: 28px 0;
+  }
+
+  .partner-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 10px;
+  }
+
+  .partner-logo {
+    height: 72px;
+  }
+}
+
+@media (max-width: 600px) {
+  .partner-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 8px;
+  }
+
+  .partner-logo {
+    height: 64px;
+  }
+}
