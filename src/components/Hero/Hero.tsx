@@ -31,10 +31,12 @@ export const Hero: React.FC = () => {
         <div className="hero-copy">
           <span className="hero-eyebrow">MARCI METZGER - THE RIDGE REALTY GROUP</span>
           <h1 className="hero-title">
-            Pahrump Is Home.
-            <span className="hero-title-accent">Let&apos;s Find Yours.</span>
+            <span className="hero-title-line">Pahrump Is</span>
+            <span className="hero-title-accent hero-title-line">Home.</span>
+            <span className="hero-title-line">Let&apos;s Find</span>
+            <span className="hero-title-accent hero-title-line">Yours.</span>
           </h1>
-          <p className="hero-subtitle">Real estate guidance from someone who knows the community.</p>
+          <p className="hero-subtitle">Real estate guidance from someone who truly knows the heartbeat of this community.</p>
 
           <div className="hero-slide-dots" aria-label="Slideshow Controls">
             {IMAGES.heroSlides.map((_, index) => (

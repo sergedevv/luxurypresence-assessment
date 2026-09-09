@@ -64,9 +64,10 @@
   font-family: var(--font-serif);
   font-size: clamp(3.7rem, 7vw, 6.5rem);
   font-weight: 600;
-  line-height: 0.94;
+  line-height: 0.84;
   color: #ffffff;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
   text-shadow: 0 3px 20px rgba(0, 0, 0, 0.6);
 }
 
@@ -76,23 +77,35 @@
 }
 
 .hero-title-accent {
-  display: inline;
+  display: block;
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
   color: #e5be75;
   text-shadow: 0 3px 24px rgba(229, 190, 117, 0.35);
-  margin-left: 8px;
+  margin-left: 0;
 }
 
 .hero-subtitle {
+  position: relative;
   max-width: 340px;
-  margin: -10px 0 28px;
+  margin: 0 0 32px 16px;
+  padding-left: 16px;
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-sans);
   font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.55;
+}
+
+.hero-subtitle::before {
+  position: absolute;
+  top: 0.1em;
+  bottom: 0.1em;
+  left: 0;
+  width: 1px;
+  background: var(--color-gold);
+  content: '';
 }
 
 /* Slide Indicators */
@@ -361,15 +374,7 @@
   .hero-title {
     max-width: 100%;
     font-size: clamp(2.8rem, 12vw, 4.2rem);
-    line-height: 0.96;
-  }
-
-  .hero-title-line {
-    white-space: normal;
-  }
-
-  .hero-title-accent {
-    margin-left: 0;
+    line-height: 0.88;
   }
 
   .hero-eyebrow {
@@ -380,6 +385,8 @@
   .hero-subtitle {
     max-width: 290px;
     font-size: 0.82rem;
+    margin-left: 8px;
+    padding-left: 12px;
   }
 
   .search-listings-card {

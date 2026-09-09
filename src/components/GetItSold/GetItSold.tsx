@@ -19,7 +19,11 @@ export const GetItSold: React.FC = () => (
       <div className="get-it-sold-list">
         {stories.map((story, index) => (
           <article className={`sold-story ${index % 2 ? 'sold-story-reverse' : ''}`} key={story.title}>
-            <div className="sold-story-image-wrap"><img src={story.image} alt="" className="sold-story-image" loading="lazy" /></div>
+            <div className="sold-story-image-wrap">
+              <div className="sold-story-image-frame">
+                <img src={story.image} alt="" className="sold-story-image" loading="lazy" />
+              </div>
+            </div>
             <div className="sold-story-copy">
               <span className="sold-story-number">0{index + 1}</span>
               <span className="sold-story-audience">{story.audience}</span>
