@@ -1,0 +1,297 @@
+/* Contact & Location Section Styles */
+.contact-location-section {
+  padding: 100px 0;
+  background-color: #fbf9f5;
+  position: relative;
+}
+
+.contact-split-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* Left Half: Form */
+.contact-form-panel {
+  padding: 56px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-heading-group {
+  margin-bottom: 32px;
+}
+
+.contact-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #1a1816;
+  margin-bottom: 10px;
+}
+
+.contact-title-script {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: #c5a059;
+}
+
+.contact-subtitle {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #6a655e;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8c877e;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: #fbf9f5;
+  border: 1px solid #e7e3db;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: #1a1816;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.btn-send-inquiry {
+  background-color: #121316;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+  margin-top: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-send-inquiry:hover {
+  background-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.35);
+}
+
+.form-success-msg {
+  background: rgba(197, 160, 89, 0.14);
+  color: #8f6c24;
+  border: 1px solid var(--color-gold-border);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Contact Info Row */
+.contact-direct-info {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #eeeae1;
+}
+
+.direct-info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a4640;
+}
+
+.direct-info-item svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+/* Right Half: Map Panel */
+.contact-map-panel {
+  position: relative;
+  background: #0f1013;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
+  padding: 40px 24px;
+}
+
+/* Stylized Topographic / Street Map SVG Background */
+.map-graphic-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Map Markers */
+.map-marker {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  z-index: 2;
+}
+
+.map-marker:hover {
+  transform: translate(-50%, -115%) scale(1.1);
+}
+
+.marker-pin {
+  filter: drop-shadow(0 4px 12px rgba(197, 160, 89, 0.6));
+}
+
+.map-marker.marker-1 { top: 32%; left: 32%; }
+.map-marker.marker-2 { top: 25%; left: 58%; }
+.map-marker.marker-3 { top: 35%; left: 78%; }
+.map-marker.marker-4 { top: 62%; left: 24%; }
+
+/* Office Card */
+.map-office-card {
+  position: relative;
+  z-index: 3;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 26px 28px;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.office-card-logo-wrap {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #0f1013;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.office-card-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.office-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1816;
+  margin-bottom: 6px;
+}
+
+.office-address {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #706b63;
+  margin-bottom: 16px;
+}
+
+.btn-get-directions {
+  display: inline-block;
+  background-color: #121316;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.btn-get-directions:hover {
+  background-color: var(--color-gold);
+  color: #ffffff;
+}
+
+/* Nevada Stylized Brand watermark */
+.map-nevada-brand {
+  position: absolute;
+  bottom: 24px;
+  letter-spacing: 0.35em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+@media (max-width: 960px) {
+  .contact-location-section {
+    padding: 70px 0;
+  }
+
+  .contact-split-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-panel {
+    padding: 36px 24px;
+  }
+
+  .contact-direct-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .contact-map-panel {
+    min-height: 420px;
+  }
+}
